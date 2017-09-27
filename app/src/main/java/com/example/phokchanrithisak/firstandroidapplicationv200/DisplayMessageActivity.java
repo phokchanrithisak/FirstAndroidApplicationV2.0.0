@@ -1,8 +1,9 @@
 package com.example.phokchanrithisak.firstandroidapplicationv200;
 
+
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class DisplayMessageActivity extends AppCompatActivity {
@@ -12,10 +13,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
 
-        Intent i = getIntent();
-        String recieveMessage = i.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent recieveIntent = getIntent();
+        String revieveMessage = recieveIntent.getStringExtra(MainActivity.EXTRA_MESSAGE_KEY);
 
-        TextView disMes = (TextView) findViewById(R.id.disMes);
-        disMes.setText(recieveMessage);
+        TextView viewMessage = (TextView) findViewById(R.id.disMes);
+        viewMessage.setText(revieveMessage);
     }
 }
